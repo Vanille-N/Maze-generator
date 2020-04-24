@@ -13,9 +13,9 @@ For help: `$ cargo run help`
 To build a maze: `$ cargo run ALGORITHM HEIGHT WIDTH`
 
 Algorithms available:
-- Prim
-- Kruskal
-- DFS backtracker
+- Prim (`prim`)
+- Kruskal (`kruskal`)
+- DFS backtracker (`dfs`)
 
 
 For more information see https://en.wikipedia.org/wiki/Maze_generation_algorithm
