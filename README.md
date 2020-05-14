@@ -18,7 +18,7 @@ Algorithms available:
 - DFS backtracker (`dfs`)
 
 
-For more information see https://en.wikipedia.org/wiki/Maze_generation_algorithm
+For more information see [](https://en.wikipedia.org/wiki/Maze_generation_algorithm)
 
 Sample run:
 
