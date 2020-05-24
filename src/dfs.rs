@@ -3,6 +3,7 @@ use crate::grid::{Direction, Position, Grid, Marker, Wall};
 pub fn build(g: &mut Grid) {
     let mut stack = Vec::new();
     stack.push((Direction::enumerate_rnd(), Position::new(0, 0)));
+    g.mark(Position::new(0, 0), Marker::Seen);
     while let Some((mut dir, pos)) = stack.pop() {
         let d = dir.next();
         stack.push((dir, pos));
