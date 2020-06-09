@@ -1,5 +1,6 @@
 # Maze Generator
-Build random mazes.
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Output is rendered as ASCII art with Unicode box drawing characters.
 
