@@ -41,3 +41,18 @@ pub fn build(g: &mut Grid) {
     }
     g.complete(Wall::Closed);
 }
+
+fn choose_in_each(mut v: Vec<(Position, usize)>) -> Vec<Position> {
+    let mut rng = thread_rng();
+    v.shuffle(&mut rng);
+    v.sort_by_key(|e| e.1);
+    let mut s = HashSet::new();
+    let mut select = Vec::new();
+    for (p, i) in v {
+        if !s.contains(&i) || rng.gen::<f64>() < 0.2 {
+            s.insert(i);
+            select.push(p);
+        }
+    }
+    select
+}
