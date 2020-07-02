@@ -338,7 +338,7 @@ impl fmt::Display for Grid {
                 write!(f, "{}", BOX[key(lt)][key(up)][key(rt)][key(dn)])?;
                 write!(f, "{}", BOX[key(rt)][key(true)][key(rt)][key(true)])?;
             }
-            writeln!(f, "")?;
+            writeln!(f)?;
         }
         for _ in 0..self.width {
             write!(f, "  ")?;
