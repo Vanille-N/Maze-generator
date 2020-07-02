@@ -2,6 +2,7 @@ pub mod dfs;
 pub mod kruskal;
 pub mod prim;
 pub mod grid;
+pub mod union_find;
 
 use crate::grid::Grid;
 
