@@ -2,6 +2,7 @@ pub mod dfs;
 pub mod kruskal;
 pub mod prim;
 pub mod grid;
+pub mod ellen;
 pub mod union_find;
 
 use crate::grid::Grid;
@@ -11,6 +12,7 @@ enum Algorithms {
     Dfs,
     Kruskal,
     Prim,
+    Ellen,
 }
 
 pub struct Config {
@@ -26,7 +28,7 @@ impl Config {
         } else if args[1] == "help" {
             println!("$ maze ALGORITHM HEIGHT WIDTH");
             println!("Where");
-            println!("    ALGORITHM : (prim | kruskal | dfs)");
+            println!("    ALGORITHM : (prim | kruskal | dfs | ellen)");
             println!("    HEIGHT    : usize");
             println!("    WIDTH     : usize");
             return Err(String::from("Done."));
@@ -37,6 +39,7 @@ impl Config {
             "prim" => Algorithms::Prim,
             "kruskal" => Algorithms::Kruskal,
             "dfs" => Algorithms::Dfs,
+            "ellen" => Algorithms::Ellen,
             s => return Err(format!("Unknown algorithm '{}'", s)),
         };
         let height = match args[2].parse::<usize>() {
@@ -57,6 +60,7 @@ pub fn run(cfg: Config) {
         Algorithms::Dfs => dfs::build(&mut g),
         Algorithms::Kruskal => kruskal::build(&mut g),
         Algorithms::Prim => prim::build(&mut g),
+        Algorithms::Ellen => ellen::build(&mut g),
     }
     println!("{}", g);
 }
