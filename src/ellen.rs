@@ -33,7 +33,7 @@ pub fn build(g: &mut Grid) {
     }
     for j in 0..g.width()-1 {
         let curr = Position::new(g.height()-1, j);
-        let neigh = Position::new(g.width()-1, j+1);
+        let neigh = curr.adj(Direction::East);
         if !union.are_joined(curr, neigh) {
             g.open(curr, Direction::East);
             union.join(curr, neigh);
